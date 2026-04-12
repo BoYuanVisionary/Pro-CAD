@@ -1,0 +1,82 @@
+# CAD Agent Configuration (example — copy to config.yaml and fill in keys
+# via environment variables). 
+
+# =============================================================================
+# Agent Settings
+# =============================================================================
+agent:
+  max_iterations: 10
+  save_messages: true
+  save_dir: "./agent_logs"
+  default_model: "Qwen/Qwen3-VL-2B-Instruct"
+
+# =============================================================================
+# Model Configurations
+# =============================================================================
+models:
+  # Local vLLM server
+  "Qwen/Qwen3-VL-2B-Instruct":
+    api_type: "vllm"
+    base_url: "http://localhost:8000/v1"
+    api_key: "token-local"
+    temperature: 0
+    max_tokens: 32768
+
+  # OpenAI
+  "gpt-4.1-2025-04-14":
+    api_type: "openai"
+    base_url: "https://api.openai.com/v1"
+    api_key: "${OPENAI_API_KEY}"
+    temperature: 0
+    max_tokens: 32768
+
+  "gpt-4o-mini-2024-07-18":
+    api_type: "openai"
+    base_url: "https://api.openai.com/v1"
+    api_key: "${OPENAI_API_KEY}"
+    temperature: 0
+    max_tokens: 4096
+
+  "gpt-5-mini-2025-08-07":
+    api_type: "openai"
+    base_url: "https://api.openai.com/v1"
+    api_key: "${OPENAI_API_KEY}"
+    temperature: 1  # gpt-5-mini only supports temperature=1
+    max_completion_tokens: 32768
+
+  # Anthropic
+  "claude-sonnet-4-5-20250929":
+    api_type: "openai"
+    base_url: "https://api.anthropic.com/v1/"
+    api_key: "${ANTHROPIC_API_KEY}"
+    temperature: 0
+    max_tokens: 8192
+
+  "claude-haiku-4-5":
+    api_type: "openai"
+    base_url: "https://api.anthropic.com/v1/"
+    api_key: "${ANTHROPIC_API_KEY}"
+    temperature: 0
+    max_tokens: 8192
+
+  # OpenRouter
+  "qwen/qwen-2.5-7b-instruct":
+    api_type: "openai"
+    base_url: "https://openrouter.ai/api/v1"
+    api_key: "${OPENROUTER_API_KEY}"
+    temperature: 0
+    max_tokens: 4096
+
+  "qwen/qwen3-8b":
+    api_type: "openai"
+    base_url: "https://openrouter.ai/api/v1"
+    api_key: "${OPENROUTER_API_KEY}"
+    temperature: 0
+    max_tokens: 4096
+
+  "qwen/qwen3-4b:free":
+    api_type: "openai"
+    base_url: "https://openrouter.ai/api/v1"
+    api_key: "${OPENROUTER_API_KEY}"
+    temperature: 0
+    max_tokens: 4096

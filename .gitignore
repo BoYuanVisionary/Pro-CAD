@@ -1,0 +1,88 @@
+# =============================================================================
+# Secrets & local config
+# =============================================================================
+config/config.yaml
+.env
+.env.*
+
+# =============================================================================
+# Large data / model artifacts (keep locally; download from HF or regenerate)
+# =============================================================================
+# Dataset files are pulled from https://huggingface.co/datasets/BBexist/ProCAD
+dataset/train_val_test.json
+dataset/improved.json
+dataset/selected_misleading_samples_train
+dataset/selected_misleading_samples_test
+dataset/selected_misleading_samples_train/
+dataset/selected_misleading_samples_test/
+dataset/deepcad_mesh/
+
+# Locally generated SFT / filter artifacts
+sft/
+training/data/
+
+# DeepCAD / text2cad ground-truth root (not redistributable)
+data/
+
+# Binary / mesh formats
+*.stl
+*.step
+*.pkl
+*.pt
+*.bin
+*.safetensors
+
+# =============================================================================
+# Run outputs
+# =============================================================================
+agent_logs/
+clarification_results/
+results/
+logs/
+wandb/
+outputs/
+checkpoints/
+saves/
+
+# =============================================================================
+# Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# =============================================================================
+# Virtual envs
+# =============================================================================
+.venv/
+venv/
+env/
+.conda/
+
+# =============================================================================
+# IDE / OS / agents
+# =============================================================================
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# =============================================================================
+# Container / HPC
+# =============================================================================
+*.sif
+torchelastic_*/

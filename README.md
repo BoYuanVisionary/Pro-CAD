@@ -1,6 +1,6 @@
 # ProCAD
 
-Official code for **"Clarify Before You Draw: Proactive Agents for Robust Text-to-CAD Generation"** ([arXiv:2602.03045](https://arxiv.org/abs/2602.03045)).
+Official code for ICML 2026 paper **"Clarify Before You Draw: Proactive Agents for Robust Text-to-CAD Generation"** ([arXiv:2602.03045](https://arxiv.org/abs/2602.03045)).
 
 ![ProCAD overview](image.png)
 
